@@ -9,30 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home/{prenom?World}/{age?20}", name="home")
+     * @Route("/", name="home")
      */
-    public function index( string $prenom, int $age): Response
+    public function index(): Response
     {
-        $txt = "Yo comment vas?"; 
+   
 
-        $pokemons = [
-            'pikatchu',
-            'Salamech',
-            'Trou dbite'
-        ];
-
-        $ninja = [
-            'village'=> 'Konoha', 
-            'renard'=> 'Kyubi'
-        ];
-
-        return $this->render('home/index.html.twig', [
-            'prenom' => $prenom, 
-            "toto" => $txt, 
-            "age" => $age,
-            "pokemons" => $pokemons, 
-            "ninja" => $ninja
-
-        ]);
+        return $this->render('home/index.html.twig');
     }
 }

@@ -4,35 +4,7 @@
 
 {% block body %}
 
-    <h1>
-        Hello {{ prenom }}, aujourd'hui tu as {{ age }} ans
-    </h1>
-
-    <p>
-        {{ toto }}
-    </p>
-
-    {% if age > 18 %}
-
-        <p>Vous êtes majeur</p>
-
-        {% else %}
-        
-        <p>Vous êtes mineur</p>
-
-    {% endif %}
-
-    {% for pokemon in pokemons %}
-
-        <p> 
-            je suis le pokemon : {{pokemon | capitalize }}
-        </p>
-        
-    {% endfor %}
-
-    <h1> Je suis Naruto du village {{ninja.village}}</h1>
-
-    <h1> Mon renard s'appel {{ninja.renard}} </h1>
+    <h1>Page d'accueil</h1>
     
 
 {% endblock %}
