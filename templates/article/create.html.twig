@@ -4,7 +4,31 @@
 
 {% block body %}
 
-    <h1>Page création article</h1>
+    <div class="container pt-5">
+
+        <div class="row">
+        
+            <div class="card col-12">
+
+                <div class="card-header">
+                    <h2>Créer un article</h2>
+
+                </div>
+                <div class="card-body">
+                    {{form_start(formArticle)}}
+
+                        {{form_widget(formArticle)}}
+
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+                    {{form_end(formArticle)}}
+                </div>
+            </div>
+
+        </div>
+
+    
+    </div>
     
 
 {% endblock %}
