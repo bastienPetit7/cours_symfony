@@ -5,6 +5,7 @@ namespace App\Controller\Article;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ class CreateArticleController extends AbstractController
      * @Route("/article/creer", name="creer_article")
      */
 
-    public function create(Request $request)
+    public function create(Request $request, EntityManagerInterface $em)
     {
         $article = new Article(); 
 
@@ -26,7 +27,13 @@ class CreateArticleController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            dd($request);
+            $em->persist($article);
+
+            $em->flush();
+
+            $this->addFlash('success',"l'article : " .$article->getTitre(). " , a bien été créé.");
+
+            return $this->redirectToRoute('creer_article');
             
         }
 
