@@ -38,7 +38,6 @@ class Article
     /**
      * @ORM\PrePersist
      */
-
     public function prePersist()
     {
         if(empty($this->createdAt))

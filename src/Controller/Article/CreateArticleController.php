@@ -16,7 +16,6 @@ class CreateArticleController extends AbstractController
     /**
      * @Route("/article/creer", name="creer_article")
      */
-
     public function create(Request $request, EntityManagerInterface $em)
     {
         $article = new Article(); 

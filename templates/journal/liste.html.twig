@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste des Journaux{% endblock %}
+
+{% block body %}
+
+
+<div class="container pt-5">
+        <div class="row justify-content-center">
+
+            <div class="col-12">
+                <h1 class="text-center">Mes Journaux</h1>
+
+            </div>
+
+            {% for journal in journaux %}
+            <div class="card col-md-6 col-sm-12 col-lg-4 col-xl-4 p-3 m-3">
+
+                <div class="card-header">
+                    <h4> {{journal.nom}}</h4>
+                </div>
+                <div class="card-body">
+                    {{journal.prix}} centimes d'euros
+                </div>
+                
+            
+            </div>
+                
+            {% endfor %}
+
+    
+        </div>
+    
+    </div>
+
+
+
+{% endblock %}

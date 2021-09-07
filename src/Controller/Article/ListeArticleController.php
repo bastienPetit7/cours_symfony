@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ListeArticleController extends AbstractController
 {
     /**
-     * @Route("/article/iste", name="liste_article")
+     * @Route("/article/liste", name="liste_article")
      */
 
      public function list(ArticleRepository $articleRepository)
