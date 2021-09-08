@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Show Article{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('liste_article')}}" class="btn btn-danger mt-3">Retour à la liste</a>
+
+    <div class="container-fluid p-5">
+    
+        <div class="row">
+
+            <h1 class="text-center mb-4">{{article.titre}}</h1>
+            <small class="text-center"> paru le : {{article.createdAt | date('d-m-Y')}}</small>
+        
+            <p class="text-center p-3">{{article.contenu}}</p>
+        
+        </div>
+    
+    
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,6 +24,9 @@ class ArticleType extends AbstractType
             ])
             ->add('contenu',TextareaType::class, [
                 "label" => "Contenu de l'article"
+            ])
+            ->add('image', FileType::class, [
+                "label" => "Image de l'article"
             ])
            
         ;
