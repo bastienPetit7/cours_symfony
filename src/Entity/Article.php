@@ -41,6 +41,12 @@ class Article
     private $image;
 
     /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $auteur;
+
+    /**
      * @ORM\PrePersist
      */
     public function prePersist()
@@ -100,6 +106,18 @@ class Article
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?User
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(?User $auteur): self
+    {
+        $this->auteur = $auteur;
 
         return $this;
     }

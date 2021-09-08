@@ -9,12 +9,22 @@
     <div class="container-fluid p-5">
     
         <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header"><h3 class="text-center">{{article.titre}}</h3></div>
+                    <div class="card-body text-center">
+                        {{article.contenu}}
+                    </div>
+                    <div class="card-footer text-center">
+                        <p>paru le : {{article.createdAt | date('d-m-Y')}}</p>
+                        <p>Ecrit par : {{article.auteur.prenom}} {{article.auteur.nomDeFamille}} </p>
+                    </div>
 
-            <h1 class="text-center mb-4">{{article.titre}}</h1>
-            <small class="text-center"> paru le : {{article.createdAt | date('d-m-Y')}}</small>
-        
-            <p class="text-center p-3">{{article.contenu}}</p>
-        
+                    <a href="{{ path('supprimer_article', {'id':article.id})}}" class="btn btn-danger mt-3 ">Supprimer l'Article</a>
+                </div>
+            </div>
+
+            
         </div>
     
     

@@ -20,19 +20,24 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('prenom', TextType::class,[
-                'label' => 'Ajouter un prenom'
+                'label' => 'Ajouter un prenom',
+                'required' => false
             ])
             ->add('nomDeFamille', TextType::class,[
-                'label' => 'Ajouter un nom de famille'
+                'label' => 'Ajouter un nom de famille',
+                'required' => false
             ])
             ->add('telephone', TextType::class,[
-                'label' => 'Ajouter un numéro de téléphone'
+                'label' => 'Ajouter un numéro de téléphone',
+                'required' => false
             ])
             ->add('email', EmailType::class,[
-                'label' => 'Ajouter un email'
+                'label' => 'Ajouter un email',
+                'required' => false
             ])        
             ->add('plainPassword', PasswordType::class, [
                 'label' => 'Ajouter un mot de passe',
+                'required' => false,
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,

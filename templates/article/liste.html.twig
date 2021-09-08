@@ -11,6 +11,7 @@
                 <h1 class="text-center">Mes Articles</h1>
 
             </div>
+            {% include "shared/_messages_flash.html.twig" %}
 
             {% for article in articles %}
             <div class="card col-md-6 col-sm-12 col-lg-4 col-xl-4 p-3 m-3">
@@ -25,7 +26,7 @@
                     Paru le {{article.createdAt | date('d-m-Y')}}
                 </div>
 
-                <a href="/article/show/{{article.id}}" class="btn btn-success">Voir l'article</a>
+                <a href=" {{ path('show_one_article', {'id': article.id} )}} " class="btn btn-success">Voir l'article</a>
             
             </div>
                 

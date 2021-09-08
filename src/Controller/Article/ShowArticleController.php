@@ -17,6 +17,12 @@ class ShowArticleController extends AbstractController
 
         $article = $articleRepository->find($id); 
 
+        if (!$article)
+        {
+            $this->addFlash("danger", "l'article n'existe pas" );
+            return $this->redirectToRoute("liste_article");
+        }
+
         return $this->render('article/show.html.twig', [
             "article" => $article
         ]);
